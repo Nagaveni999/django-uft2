@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+
+{% block title %}Employee Dashboard{% endblock %}
+
+{% block links %}
+  <!-- Custom styles for this template nagu from meta u pasted to script-->
+  <link href="/static/css/sb-admin.css" rel="stylesheet">
+  
+{% endblock %}
+{% block body %}
+<body id="page-top">
+
+
+
+  <nav class="navbar navbar-expand navbar-dark bg-dark">
+    
+    <a class="navbar-brand mr-1" href="index.html">Insights and new thinking for Digital Disruption</a>
+
+  
+   
+    
+
+    <!-- Navbar -->
+    
+
+  </nav>
+  <div class="container">
+    <h1 style="color:rgb(42, 125, 219)"><center><strong>Career opportunities</strong></center></h1>
+    </div>
+
+  <div id="wrapper"></div>
+
+    
+
+    <div id="content-wrapper">
+
+      <div class="container-fluid">
+
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+
+            <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0" method="GET">
+              <div class="input-group">
+               
+                  <!--<button class="btn btn-primary" type="button" href="">-->
+                  <button><a href="apply">search of jobs</a></button>
+                  <button><a href="about">Back To Career Page</a></button>
+                    
+                  
+                </div>
+              </div>
+            </form>
+
+          </li>
+          
+        </ol>
+
+
+        
+            
+        
+<!--card diplay-->
+<div class="row">
+  {% for d in da %}
+<div class="col-sm-4">
+  <div class="card">
+    <div class="card-body">
+      
+      <h5 class="card-title">{{d.JobTitle}}</h5>
+      <!-- Title -->
+    <h4 class="card-title font-weight-bold">{{d.ExpRange}}</h4>
+    <!-- Text -->
+    <!--<p class="card-text">Year of Exp:2-3years</p>
+      <p><i class="fas fa-tint fa-lg text-info pr-2"></i>50% Job Match</p>
+      <p class="card-text">Job Description:Skills set pandas,numpy database skills are as follows</p>
+      <p class="card-text">mongo db,pymongo,html,css,</p>-->
+      <a href="#" class="btn btn-primary">Apply</a>
+    </div>
+  </div>
+  
+</div>
+{%endfor%}
+</div>
+<!--end of card-->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  
+  
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="/static/vendor/jquery/jquery.min.js"></script>
+  <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="/static/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Page level plugin JavaScript-->
+  <script src="/static/vendor/chart.js/Chart.min.js"></script>
+  <script src="/static/vendor/datatables/jquery.dataTables.js"></script>
+  <script src="/static/vendor/datatables/dataTables.bootstrap4.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="/static/js/sb-admin.min.js"></script>
+
+  <!-- Demo scripts for this page-->
+  <script src="/static/js/demo/datatables-demo.js"></script>
+  <script src="/static/js/demo/chart-area-demo.js"></script>
+
+</body>
+{% endblock %}

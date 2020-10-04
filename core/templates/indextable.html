@@ -1,0 +1,167 @@
+{% extends "base.html" %}
+
+{% block title %}Employee Dashboard{% endblock %}
+
+{% block links %}
+  <!-- Custom styles for this template nagu from meta u pasted to script-->
+  <link href="/static/css/sb-admin.css" rel="stylesheet">
+  
+  
+{% endblock %}
+{% block body %}
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="container">
+        
+            <a class="navbar-brand" href="#">
+             <img src="bird.jpg" alt="Logo" style="width:40px;">
+           </a>
+      
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+             <a class="nav-link" href="#">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">carrers
+                  <span class="sr-only">(current)</span>
+                </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+<body id="page-top">
+
+
+
+  
+
+    <!-- Navbar -->
+    
+
+ 
+  <div class="container">
+    <h1><center><strong>Career opportunities</strong></center></h1>
+    </div>
+
+  <div id="wrapper"></div>
+
+    
+
+    <div id="content-wrapper">
+
+      <div class="container-fluid">
+
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+
+            <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0" method="GET">
+              <div class="input-group">
+                <input type="text" name="q" class="form-control" placeholder="enter job">
+                <div class="input-group-append">
+                  <!--<button class="btn btn-primary" type="button" href="">-->
+                    <button class="btn btn-primary" type="submit" value="Submit" href="{%url 'search'% }">Submit</button>
+                    
+                  </button>
+                </div>
+              </div>
+            </form>
+
+            <a href="#">Back To Career Page</a>
+          </li>
+          
+        </ol>
+
+
+        
+            
+        
+<!--card diplay-->
+<center>
+<table class="table table-striped">
+    
+    
+    <thead>
+      <tr>
+        
+        <th scope="col">Job Title</th>
+        <th scope="col">Exp</th>
+        
+        <th Scope="col">Industry</th>
+        <th Scope="col">Location</th>
+        <th Scope="col">Select<Select</th>
+
+
+
+
+
+        <th Scope="col">Apply</th>
+        <th Scope="col"><button class="btn btn-primary">Apply Together</button></th>
+
+      </tr>
+      
+    </thead>
+    <tbody>
+        {%for d in da%}
+      <tr>
+        <th scope="row">{{d.JobTitle}}</th>
+        <td>{{d.ExpRange}}</td>
+        
+        <td>{{d.Industry}}</td>
+        <td>{{d.Location}}</td>
+        <td>
+            
+            <label class="checkbox-inline"><input type="checkbox" value=""></label>
+              </div>
+        </td>
+        <td><a href="{{d.ApplicationURI}}">Apply</a></td>
+        </tr>
+      
+      {%endfor%}
+      </tbody>
+    
+  </table>
+</center>
+
+<!--end of card-->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  
+  
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="/static/vendor/jquery/jquery.min.js"></script>
+  <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="/static/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Page level plugin JavaScript-->
+  <script src="/static/vendor/chart.js/Chart.min.js"></script>
+  <script src="/static/vendor/datatables/jquery.dataTables.js"></script>
+  <script src="/static/vendor/datatables/dataTables.bootstrap4.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="/static/js/sb-admin.min.js"></script>
+
+  <!-- Demo scripts for this page-->
+  <script src="/static/js/demo/datatables-demo.js"></script>
+  <script src="/static/js/demo/chart-area-demo.js"></script>
+
+</body>
+{% endblock %}
